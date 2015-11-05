@@ -11,7 +11,7 @@ const Table = require('./table');
 const app = express();
 
 // Logs
-app.use(morgan(':method :url :response-time'));
+app.use(morgan('dev'));
 
 // Database connection
 mongoose.connect('mongodb://mongo:27017/napoleon', err => {
