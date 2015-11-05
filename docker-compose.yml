@@ -1,0 +1,18 @@
+haproxy:
+  image: tutum/haproxy
+  ports:
+    - "80:80"
+  links:
+    - web
+
+web:
+  build: .
+  links:
+    - mongo
+  environment:
+    - NODE_ENV
+    - USER
+    - PASS
+
+mongo:
+  image: mongo

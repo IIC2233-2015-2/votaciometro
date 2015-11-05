@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Votaciómetro API</title>
+  <link rel="stylesheet" href="https://yegor256.github.io/tacit/tacit.min.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+
+<body>
+  <section>
+    <article>
+      <h1>Votaciómetro <em>API Privada</em></h1>
+
+      <p>
+        Para usar esta API necesitas las credenciales suficientes para realizar <code>HTTP Basic Auth</code>.
+      </p>
+      <p>
+        Se recomienda leer la documentación de la librería que uses para saber cómo realizar esta operación.
+      </p>
+
+      <h2>Uso</h2>
+      <h3><code>GET /api/v1/lists</code></h3>
+      <p>
+        Retorna una lista en formato <code>JSON</code> con todas los nombres de las listas presentes en la elección. Por ejemplo:
+      </p>
+
+      <pre>
+[
+  "list_1",
+  "list_2",
+  "list_3"
+]
+      </pre>
+
+      <h3><code>GET /api/v1/tables</code></h3>
+      <p>
+        Retorna una lista en formato <code>JSON</code> con todas las mesas disponibles. Por ejemplo:
+      </p>
+
+      <pre>
+[
+  {
+    "_id": "563abbc56bb02c49ca701bea",
+    "name": "Table"
+  },
+  {
+    "_id": "563abbc56bb02c49ca701bec",
+    "name": "Other Table"
+  }
+]
+      </pre>
+
+      <h3><code>GET /api/v1/tables/:id</code></h3>
+
+      <p>
+        Retorna los resultados de esa mesa en formato <code>JSON</code>. Por ejemplo:
+      </p>
+      <pre>
+{
+  "_id": "563abbc56bb02c49ca701bea",
+  "name": "Table",
+  "votes": {
+    list_1: 104,
+    list_3: 12,
+    list_2: 132
+  }
+}
+      </pre>
+      <footer>
+        <small>Author: <a href="https://github.com/mrpatiwi"><small>@mrpatiwi</small></a></small>
+      </footer>
+    </article>
+  </section>
+</body>
+
+</html>
