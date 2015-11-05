@@ -1,4 +1,5 @@
 # Votaciómetro API
+> Node.js ES6 + Express.js + MongoDB on Docker
 
 ## Getting Started
 Install dependencies
