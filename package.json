@@ -1,6 +1,6 @@
 {
   "name": "votaciometro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Proyecto ficticio",
   "main": "index.js",
   "scripts": {
