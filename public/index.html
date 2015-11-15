@@ -17,10 +17,18 @@
         Para usar esta API necesitas las credenciales suficientes para realizar <code>HTTP Basic Auth</code>.
       </p>
       <p>
-        Se recomienda leer la documentación de la librería que uses para saber cómo realizar esta operación.
+        Al realizar una operación sin credenciales o con credenciales inválidas se retornará Status Code <code>401 Unauthorized</code>.
+      </p>
+      <p>
+        Se recomienda leer la documentación de la librería que uses para saber cómo realizar operaciones usando este protocolo.
       </p>
 
       <h2>Uso</h2>
+
+      <p>
+        Toda acción retorna un Status Code <code>200 OK</code> a menos que se explicite lo contrario.
+      </p>
+
       <h3><code>GET /api/v1/lists</code></h3>
       <p>
         Retorna una lista en formato <code>JSON</code> con todas los nombres de las listas presentes en la elección. Por ejemplo:
@@ -55,7 +63,10 @@
       <h3><code>GET /api/v1/tables/:id</code></h3>
 
       <p>
-        Retorna los resultados de esa mesa en formato <code>JSON</code>. Por ejemplo:
+        Retorna los resultados de los votos de una mesa en formato <code>JSON</code>, se debe identificar a la mesa usando su <code>id</code>.
+      </p>
+      <p>
+        Por ejemplo, <code>GET</code> a <code>/api/v1/tables/563abbc56bb02c49ca701bea</code> retorna:
       </p>
       <pre>
 {
@@ -69,10 +80,11 @@
 }
       </pre>
       <footer>
-        <small>Author: <a href="https://github.com/mrpatiwi"><small>@mrpatiwi</small></a></small>
+        <small>Author: <a href="https://github.com/mrpatiwi"><small>@mrpatiwi</small></a> | Source: <a href="https://github.com/IIC2233-2015-2/votaciometro"><small>IIC2233-2015-2/votaciometro</small></a></small>
       </footer>
     </article>
   </section>
+  <br>
 </body>
 
 </html>
