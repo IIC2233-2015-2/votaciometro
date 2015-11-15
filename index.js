@@ -56,8 +56,10 @@ app.get('/api/v1/tables', auth, (req, res) => {
 });
 
 app.get('/api/v1/tables/:id', auth, (req, res) => {
-  Table.findOne({_id: req.params.id}, 'name votes').then(tables => {
-    res.send(tables);
+  Table.findOne({ _id: req.params.id }, 'name votes').then(table => {
+    res.send(table);
+  }, err => {
+    res.status(404).send({ error: 'not found' });
   });
 });
 
