@@ -14,8 +14,10 @@ const app = express();
 app.use(morgan('dev'));
 
 // Database connection
-mongoose.connect('mongodb://mongo:27017/napoleon', err => {
-  if (err) { mongoose.connect('mongodb://localhost:27017/napoleon'); }
+mongoose.connect('mongodb://mongo:27017/democrito', err => {
+  if (err) {
+    mongoose.connect('mongodb://localhost:27017/democrito');
+  }
 });
 
 // Prepare database
@@ -29,12 +31,12 @@ Table.remove().exec();
 // Seed new ones
 lugares.forEach(lugar => {
   Table.create({
-    name:   lugar,
-    votes:  listas.reduce((result, lista) => {
-              result[lista] = Math.floor(Math.random() * MAX_VOTES);
-              return result;
-            }, {}),
-    });
+    name: lugar,
+    votes: listas.reduce((result, lista) => {
+      result[lista] = Math.floor(Math.random() * MAX_VOTES);
+      return result;
+    }, {}),
+  });
 });
 
 // Auth
