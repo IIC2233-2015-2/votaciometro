@@ -47,6 +47,7 @@ const auth = basicAuth(USER, PASS)
 // Serve static content from 'public' directory
 app.use(express.static('public'));
 
+// Routes
 app.get('/api/v1/lists', auth, (req, res) => {
   res.send(listas);
 });
